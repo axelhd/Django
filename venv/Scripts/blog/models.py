@@ -2,6 +2,7 @@ from django.conf import settings
 from django.db import models
 from django.utils import timezone
 
+# Test
 
 class Post(models.Model):
     author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
@@ -13,6 +14,7 @@ class Post(models.Model):
     def publish(self):
         self.published_date = timezone.now()
         self.save()
+        print("Done")
 
     def __str__(self):
         return self.title
